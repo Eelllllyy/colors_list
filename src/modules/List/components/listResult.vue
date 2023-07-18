@@ -1,9 +1,10 @@
 <template>
-  <label><input type="checkbox" name="name" value="Четотам"> {{ listItem.name }}</label>
+  <p>{{ listItem.name }}</p>
   <button>Click</button>
-  <div v-for="item in listItem.items" v-if="openList">
-    <!-- <input type="color" :value="item.color"> -->
-    <div :style="{color: item.color}">sdfsffd</div>
+  <div v-for="(item, index) in listItem.items" v-if="openList" :key="index" class="color-item">
+    <div  class="color-block">
+      <div v-for="i in item.count" :style="{backgroundColor: item.color}" class="color-content"></div>
+    </div>
   </div>
 </template>
 <script setup>
@@ -18,7 +19,17 @@ const props = defineProps({
 }})
 </script>
 <style scoped>
-.card{
-  color: rgb(102, 169, 93)
+.color-item{
+  margin: 10px 0;
+}
+.color-block{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.color-content{
+  width: 12px;
+  height: 12px;
+  /* border: 1px solid initial; */
 }
 </style>

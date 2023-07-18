@@ -6,7 +6,7 @@
       </div>
     </article>
     <article class="article list-result">
-      <div v-for="listItem in listItems">
+      <div v-for="listItem in listItems" class="list-result-content">
         <listResult :listItem="listItem"/>
       </div>
     </article>
@@ -30,5 +30,10 @@ import listResult from '../../List/components/listResult.vue'
   width: 40vw;
   height: 90vh;
   border: 1px solid black;
+}
+.list-result-content{
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
 }
 </style>
