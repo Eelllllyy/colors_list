@@ -1,13 +1,13 @@
 <template>
   <section class="section">
     <article class="article list-checkbox">
-      <div v-for="listItem in listItems">
-        <listCheckbox :listItem="listItem"/>
+      <div v-for="(listItem, index) in listItems" :key="index">
+        <listCheckbox :listItem="listItem" :index="index"/>
       </div>
     </article>
     <article class="article list-result">
-      <div v-for="listItem in listItems" class="list-result-content">
-        <listResult :listItem="listItem"/>
+      <div v-for="(listItem, index) in listItems" class="list-result-content" :key="index">
+        <listResult :listItem="listItem" :index="index"/>
       </div>
     </article>
   </section>
