@@ -12,4 +12,7 @@ import mainPage from '@/modules/Common/page/mainPage.vue'
   padding: 0;
   box-sizing: border-box;
 }
+input[type=checkbox]{
+margin: 5px;
+}
 </style>

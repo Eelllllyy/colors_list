@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <article class="article list-checkbox">
-      <div v-for="(listItem, index) in listItems" :key="index">
+      <div v-for="(listItem, index) in listItems" :key="index" class="list-items-content">
         <listCheckbox :listItem="listItem" :index="index"/>
       </div>
     </article>
@@ -9,13 +9,17 @@
       <div v-for="(listItem, index) in listItems" class="list-result-content" :key="index">
         <listResult :listItem="listItem" :index="index"/>
       </div>
+      <div v-for="colors in currentMix">
+        <mixColor :colors="colors"/>
+      </div>
     </article>
   </section>
 </template>
 <script setup>
-import {listItems} from '@/modules/Common/commonService'
+import {listItems, currentMix} from '@/modules/Common/commonService'
 import listCheckbox from '../../List/components/listCheckbox.vue'
 import listResult from '../../List/components/listResult.vue'
+import mixColor from '@/modules/List/components/mixColor.vue';
 
 </script>
 <style scoped>
@@ -36,4 +40,13 @@ import listResult from '../../List/components/listResult.vue'
   padding: 10px;
   margin: 10px;
 }
+.list-items-content{
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 </style>
